@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+{{title}} is working {% for i in object_list %}
+<a href="{% url 'posts:detail' id=i.id %}">{{ i.title}}</a>
+<a href="{{ i.get_absolute_url }}">{{ i.title}}</a>
+<div>{{ i.content }}</div>
+<div>{{ i.update }}</div>
+<div>{{ i.timestamp }}</div>
+{% endfor %}
+{% endblock %}

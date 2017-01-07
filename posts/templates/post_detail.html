@@ -1,9 +1,15 @@
+{% extends 'base.html' %}
+{% block head %}
+{{ instance.title }}
+{% endblock%}
+{% block content %}
 <div>
-	{{ instance.id }}
+    {{ instance.id }}
 </div>
 <div>
-	{{ instance.title }}
+    {{ instance.title }}
 </div>
 <div>
-	{{ instance.content }}
+    {{ instance.content }}
 </div>
+{% endblock %}
