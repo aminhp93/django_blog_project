@@ -6,16 +6,17 @@
     {% if instance.image %}
         <img src="{{instance.image.url}}" alt="" class="img-responsive">
     {% endif %}
-    <h3>Title: {{ title }}</h3>
+    <h3>Title: {{ title }} {% if instance.draft %} <span style="color:red">Draft</span> {% endif %}| {{ instance.publish }}</h3>
     {% if instance.user.get_full_name %}
     <p>Author: {{ instance.user.get_full_name }}</p>
     {% else %}
     <p>Author: {{ instance.user }}</p>
     {% endif %}
     <div>
-        {{ instance.id }}
-        {{ instance.title }}
-        {{ instance.content|linebreaks }}
+
+        <!-- {{ instance.id }} -->
+        <!-- {{ instance.title }} -->
+        <!-- {{ instance.content|linebreaks }} -->
     </div>
     
 

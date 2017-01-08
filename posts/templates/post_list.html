@@ -15,9 +15,10 @@
                 <p>Author: {{ i.user }}</p>
                 {% endif %}
                 <a href="{{ i.get_absolute_url }}">{{ i.title}}</a>
-                <h3>{{ i.content | linebreaks | truncatechars:120 }}</h3>
-                <div>{{ i.update }}</div>
-                <div>{{ i.timestamp | timesince }} ago</div>
+                <!-- <h3>{{ i.content | linebreaks | truncatechars:120 }}</h3> -->
+                <!-- <div>{{ i.update }}</div> -->
+                <!-- <div>{{ i.timestamp | timesince }} ago</div> -->
+                <div>{{ i.publish }}</div>
                 <a href="{{ i.get_absolute_url }}" class="btn btn-primary" role="button">View</a>
             </div>
         </div>
