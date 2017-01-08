@@ -2,7 +2,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
-
+from django.conf import settings
 # Create your models here.
 
 def upload_location(instance, filename):
@@ -11,6 +11,7 @@ def upload_location(instance, filename):
 
 
 class Post(models.Model):
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
 	title = models.CharField(max_length=120)
 	slug = models.SlugField(unique=True)
 	image = models.ImageField(upload_to=upload_location, null=True, blank=True, width_field="width_field", height_field="height_field")
