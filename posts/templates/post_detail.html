@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block head %} {{ instance.title }} {% endblock%} {% block content %}
 <div class="col-sm-6 col-sm-offset-3">
+	<img src="{{instance.image.url}}" alt="" class="img-responsive">
     <div>
         {{ instance.id }}
     </div>

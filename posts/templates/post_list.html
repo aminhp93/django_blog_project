@@ -6,8 +6,10 @@
     {% for i in object_list %}
     <div class="col-sm-12">
         <div class="thumbnail">
+            {% if i.image %}
+                <img src="{{i.image.url}}" alt="" class="img-responsive">
+            {% endif %}
             <div class="caption">
-                <a href="{% url 'posts:detail' id=i.id %}">{{ i.title}}</a>
                 <a href="{{ i.get_absolute_url }}">{{ i.title}}</a>
                 <h3>{{ i.content | linebreaks | truncatechars:120 }}</h3>
                 <div>{{ i.update }}</div>
